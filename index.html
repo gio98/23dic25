@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz 4 anos y 2 meses juntos!!</title>
+    <style>
+        @font-face {
+            font-family: crfont;
+            src: url(Californian\ Signature.otf);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html, body {
+            height: 100%;
+            width: 100%;
+        }
+        
+        body {
+            background: url(sfondo1.png) no-repeat center center;
+            background-size: cover;
+            background-attachment: fixed;
+            overflow: hidden;
+            position: relative;
+            min-height: 100vh;
+            background-position-x: -55pc;
+        }
+        
+        /* Media query per desktop - mantiene il layout originale */
+        @media (min-width: 768px) {
+            body {
+                background-position-y: 0pc;
+                background-size: 57pc 43pc;
+                background-position-x: -28pc;
+            }
+        }
+        
+        /* Media query per dispositivi mobili - posizionamento tra cuore e topolino */
+        @media (max-width: 767px) {
+            .romantic-button {
+                top: 26pc;
+                left: 6pc;
+                font-size: 1rem;
+                padding: 10px 20px;
+                min-width: 100px;
+            }
+        }
+        
+        /* Media query per tablet - posizionamento tra cuore e topolino */
+        @media (max-width: 1024px) and (min-width: 768px) {
+            .romantic-button {
+                top: 24pc;
+                left: 7pc;
+                font-size: 1.1rem;
+                padding: 12px 25px;
+                min-width: 110px;
+            }
+        }
+        
+        /* Overlay romantico con gradiente animato */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at center, 
+                rgba(255, 182, 193, 0.2) 0%, 
+                rgba(255, 105, 180, 0.15) 50%, 
+                rgba(138, 43, 226, 0.1) 100%);
+            pointer-events: none;
+            z-index: 1;
+            animation: gradientPulse 6s ease-in-out infinite;
+        }
+        
+        @keyframes gradientPulse {
+            0%, 100% {
+                opacity: 0.7;
+            }
+            50% {
+                opacity: 1;
+            }
+        }
+        
+        /* Bordo luminoso romantico */
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border: 3px solid transparent;
+            border-image: linear-gradient(45deg, 
+                rgba(255, 215, 0, 0.6), 
+                rgba(255, 105, 180, 0.6), 
+                rgba(138, 43, 226, 0.6), 
+                rgba(255, 215, 0, 0.6)) 1;
+            pointer-events: none;
+            z-index: 4;
+            animation: synchronizedGlow 6s ease-in-out infinite;
+        }
+
+        .img-topolino {
+            width: 13pc;
+            position: absolute;
+            left: 5pc;
+            top: 32pc;
+            z-index: 3;
+            animation: gentleFloat 4s ease-in-out infinite 1s, synchronizedGlow 6s ease-in-out infinite;
+        }
+        
+        h1.h1-top {
+            font-family: crfont;
+            text-align: center;
+            font-size: 2.7pc;
+            color: gold;
+            position: absolute;
+            top: 2pc;
+            left: 3pc;
+            z-index: 3;
+            text-shadow: 
+                0 0 20px rgba(255, 215, 0, 1),
+                0 0 40px rgba(255, 215, 0, 0.8),
+                0 0 60px rgba(255, 215, 0, 0.6),
+                3px 3px 6px rgba(0, 0, 0, 0.6);
+            animation: gentleFloat 4s ease-in-out infinite, synchronizedGlow 6s ease-in-out infinite;
+        }
+        
+        h1.h1-center {
+            position: absolute;
+            top: 18pc;
+            left: 4pc;
+            font-size: 6pc;
+            color: gold;
+            z-index: 3;
+            text-shadow: 
+                0 0 25px rgba(255, 215, 0, 1),
+                0 0 50px rgba(255, 215, 0, 0.8),
+                0 0 75px rgba(255, 215, 0, 0.6),
+                4px 4px 8px rgba(0, 0, 0, 0.7);
+            animation: gentleFloat 4s ease-in-out infinite 0.5s, synchronizedGlow 6s ease-in-out infinite, heartPulse 2s ease-in-out infinite;
+            font-family: crfont;
+        }
+        
+        /* Animazione float gentile sincronizzata */
+        @keyframes gentleFloat {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+        
+        /* Animazione glow sincronizzata per tutti gli elementi */
+        @keyframes synchronizedGlow {
+            0%, 100% {
+                filter: brightness(1) drop-shadow(0 0 15px rgba(255, 215, 0, 0.5));
+            }
+            33% {
+                filter: brightness(1.2) drop-shadow(0 0 25px rgba(255, 182, 193, 0.7));
+            }
+            66% {
+                filter: brightness(1.3) drop-shadow(0 0 30px rgba(255, 105, 180, 0.8));
+            }
+        }
+        
+        /* Animazione pulse delicato per testo centrale */
+        @keyframes heartPulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            15% {
+                transform: scale(1.08);
+            }
+            30% {
+                transform: scale(1);
+            }
+            45% {
+                transform: scale(1.12);
+            }
+            60% {
+                transform: scale(1);
+            }
+        }
+        
+        
+        /* Particelle di cuori fluttuanti */
+        .heart {
+            position: fixed;
+            color: rgba(255, 105, 180, 0.6);
+            font-size: 20px;
+            animation: rise linear infinite;
+            z-index: 1;
+        }
+        
+        @keyframes rise {
+            0% {
+                bottom: -50px;
+                opacity: 0;
+                transform: translateX(0) rotate(0deg);
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                bottom: 110vh;
+                opacity: 0;
+                transform: translateX(100px) rotate(360deg);
+            }
+        }
+        
+        /* Stelle scintillanti */
+        .sparkle {
+            position: fixed;
+            width: 4px;
+            height: 4px;
+            background: gold;
+            border-radius: 50%;
+            box-shadow: 0 0 10px gold, 0 0 20px rgba(255, 215, 0, 0.5);
+            animation: sparkle 1.5s ease-in-out infinite;
+            z-index: 1;
+        }
+        
+        @keyframes sparkle {
+            0%, 100% {
+                opacity: 0;
+                transform: scale(0);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.5);
+            }
+        }
+        
+        /* Effetto Bokeh romantico */
+        .bokeh {
+            position: fixed;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255, 182, 193, 0.4) 0%, transparent 70%);
+            animation: bokehFloat 15s linear infinite;
+            z-index: 1;
+            pointer-events: none;
+        }
+        
+        @keyframes bokehFloat {
+            0% {
+                transform: translate(0, 100vh) scale(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.6;
+            }
+            90% {
+                opacity: 0.6;
+            }
+            100% {
+                transform: translate(50vw, -100vh) scale(1);
+                opacity: 0;
+            }
+        }
+        
+        /* Particelle di luce */
+        .light-particle {
+            position: fixed;
+            width: 2px;
+            height: 2px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 0 5px white, 0 0 10px rgba(255, 255, 255, 0.5);
+            animation: twinkle 3s ease-in-out infinite;
+            z-index: 1;
+            pointer-events: none;
+        }
+        
+        @keyframes twinkle {
+            0%, 100% {
+                opacity: 0.3;
+                transform: scale(0.8);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.2);
+            }
+        }
+        
+        /* Bottone romantico - posizionamento tra cuore e topolino */
+       .romantic-button {
+            position: absolute;
+            top: 28pc;
+            left: 6pc;
+            padding: 14px 32px;
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.95) 0%, rgba(255, 165, 0, 0.95) 100%);
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            border-radius: 50px;
+            cursor: pointer;
+            z-index: 4;
+            box-shadow: 
+                0 0 25px rgba(255, 215, 0, 0.8),
+                0 0 45px rgba(255, 105, 180, 0.6),
+                0 8px 20px rgba(0, 0, 0, 0.3);
+            animation: buttonFloat 3s ease-in-out infinite, buttonGlow 2s ease-in-out infinite alternate;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+            font-weight: bold;
+            font-family: Arial, sans-serif;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+            letter-spacing: 1px;
+            min-width: 130px;
+            text-align: center;
+            backdrop-filter: blur(3px);
+        }
+        
+        .romantic-button:hover {
+            transform: scale(1.05) translateY(-3px);
+            box-shadow: 
+                0 0 35px rgba(255, 215, 0, 0.9),
+                0 0 65px rgba(255, 105, 180, 0.7),
+                0 12px 30px rgba(0, 0, 0, 0.5);
+            background: linear-gradient(135deg, rgba(255, 215, 0, 1) 0%, rgba(255, 165, 0, 1) 100%);
+        }
+        
+        .romantic-button:active {
+            transform: scale(0.98) translateY(-1px);
+        }
+        
+        @keyframes buttonFloat {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+        
+        @keyframes buttonGlow {
+            0% {
+                box-shadow: 
+                    0 0 20px rgba(255, 215, 0, 0.6),
+                    0 0 40px rgba(255, 105, 180, 0.4),
+                    0 5px 15px rgba(0, 0, 0, 0.3);
+            }
+            100% {
+                box-shadow: 
+                    0 0 30px rgba(255, 215, 0, 0.9),
+                    0 0 60px rgba(255, 105, 180, 0.7),
+                    0 5px 20px rgba(0, 0, 0, 0.4);
+            }
+        }
+        
+        /* Modal romantica */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(10px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        .modal-overlay.active {
+            display: flex;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        .modal-content {
+            background: linear-gradient(135deg, 
+                rgba(255, 240, 245, 0.95) 0%, 
+                rgba(255, 228, 225, 0.95) 100%);
+            padding: 40px;
+            border-radius: 30px;
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+            box-shadow: 
+                0 0 40px rgba(255, 215, 0, 0.5),
+                0 0 80px rgba(255, 105, 180, 0.4),
+                0 10px 50px rgba(0, 0, 0, 0.3);
+            border: 3px solid rgba(255, 215, 0, 0.6);
+            animation: modalSlideIn 0.5s ease, synchronizedGlow 6s ease-in-out infinite;
+            text-align: center;
+        }
+        
+        @keyframes modalSlideIn {
+            from {
+                transform: scale(0.7) translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1) translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        .modal-title {
+            font-family: crfont;
+            font-size: 3rem;
+            color: #FF1493;
+            margin-bottom: 20px;
+            text-shadow: 
+                0 0 10px rgba(255, 105, 180, 0.8),
+                0 0 20px rgba(255, 105, 180, 0.5);
+            animation: heartPulse 2s ease-in-out infinite;
+        }
+        
+        .modal-text {
+            font-family: Arial, sans-serif;
+            font-size: 1.2rem;
+            color: #8B4513;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+        
+        .modal-close {
+            background: linear-gradient(135deg, #FF69B4 0%, #FF1493 100%);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(255, 105, 180, 0.4);
+            transition: all 0.3s ease;
+        }
+        
+        .modal-close:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(255, 105, 180, 0.6);
+        }
+        
+        .modal-close:active {
+            transform: scale(0.95);
+        }
+        
+        .modal-hearts {
+            position: absolute;
+            font-size: 2rem;
+            animation: floatHeart 3s ease-in-out infinite;
+        }
+        
+        .modal-hearts:nth-child(1) {
+            top: 20px;
+            left: 20px;
+            animation-delay: 0s;
+        }
+        
+        .modal-hearts:nth-child(2) {
+            top: 20px;
+            right: 20px;
+            animation-delay: 0.5s;
+        }
+        
+        .modal-hearts:nth-child(3) {
+            bottom: 20px;
+            left: 20px;
+            animation-delay: 1s;
+        }
+        
+        .modal-hearts:nth-child(4) {
+            bottom: 20px;
+            right: 20px;
+            animation-delay: 1.5s;
+        }
+        
+        @keyframes floatHeart {
+            0%, 100% {
+                transform: translateY(0px) scale(1);
+                opacity: 0.6;
+            }
+            50% {
+                transform: translateY(-10px) scale(1.2);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1 class="h1-top" style="font-family: crfont;">Feliz 4 anos y <br> 2 meses juntos!!</h1>
+    <h1 class="h1-center" style="font-family: crfont;">A+G</h1>
+    <img class="img-topolino" src="bacio-removebg-preview.png" alt="">
+    
+    <!-- Bottone romantico -->
+    <button class="romantic-button" onclick="openModal()">Click Me</button>
+    
+    <!-- Modal romantica -->
+    <div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <span class="modal-hearts">💖</span>
+            <span class="modal-hearts">💖</span>
+            <p>¡Felices 4 años y 2 meses juntos, amor de mi vida! Aquí estamos, 23 de diciembre, y con este increíble día nuestro, abrimos las puertas a esta mágica Navidad que juntos nos preparamos para vivir, como cada día extraordinario y único que paso aquí a tu lado. Quiero darte las gracias por existir aquí a mi lado, amor de mi vida, y por hacerme vivir cada día de una manera única e inolvidable aquí a tu lado. Este mes juntos también ha volado, y también fue hermoso vivir tu preciado cumpleaños juntos, amor de mi vida, donde nos divertimos y vivimos un momento inolvidable juntos. Hoy haremos lo mismo con nuestro hermoso y extraordinario 23, porque más que ningún otro, el 23 es el día que precede a la celebración que tanto amas, la preciosa Navidad. Quiero darte las gracias por hacerme redescubrir la magia de esta fiesta y cómo vivirla con alegría y pasión. Lo más especial es el hecho de que cada Navidad redescubro algo nuevo que me hace sentir como un niño de nuevo. Lo más preciado es que cada Navidad es un momento mágico que paso aquí a tu lado, ¡el amor de mi vida! Quiero darte las gracias por estar aquí a mi lado, amor de mi vida, y mi primer pensamiento este mes es como el momento difícil tras la muerte de mi abuelo. Con tu precioso e infinito amor, te quedaste a mi lado y borraste cada dolor en mí, cambiando mi perspectiva de la vida y llenando mi corazón de fuerza y coraje para afrontar este momento. Nunca dejaré de agradecerte por toda mi existencia, amor de mi vida, por este precioso gesto de amor y por cada uno de los demás que has tenido por mí hasta ahora, y por las cosas especiales que harás por mí cada día. Me encanta estar aquí cada momento, abrazada por tus preciosos brazos, porque eres mi preciado hogar. Con tus dulces besos, me relajas, y tu dulce voz acelera mi corazón. Como un niño, solo tú sabes cómo relajarme y hacerme cerrar los ojos, quedándome dormido juntos, mientras nuestras preciosas almas se fusionan, convirtiéndose en una, haciendo que nuestros corazones latan al unísono. Quiero agradecerte, amor de mi vida, por cómo me ayudaste en el proyecto que emprendimos juntos y casi terminamos con compromiso y perseverancia. Quiero decirte que eres el arquitecto de software número uno del universo. Con tu guía me sentí seguro, y con tu precisión, amor de mi vida, pudimos presentar un trabajo extraordinario. Hoy, 23 de febrero, quiero brindar juntos por el extraordinario trabajo que hemos realizado juntos. Como en cualquier otro proyecto, ¡juntos unimos fuerzas para superar cada desafío! Gracias por estar aquí en cada momento para animarme y quiero decirte que creo en ti todos los días, amor de mi vida, y estoy orgulloso de estar aquí a tu lado, amor de mi vida, y me encanta inspirarme en la extraordinaria fuerza que llevas en tu corazón y que cada día desatas con fuerza y perseverancia para superar cada desafío. Estaré aquí a tu lado todos los días, amor de mi vida, animándote y apoyándote. Recuerda nunca detenerte porque cada día eres el número uno en todo el universo, capaz de enfrentar y conquistar cada desafío que la vida te lanza. Incluso en esos momentos difíciles, amor de mi vida, nunca estarás solo porque estaré aquí a tu lado con todo mi amor para animarte y apoyarte hasta que llegues al final de cada desafío. ¡Felices 4 años y 2 meses juntos, amor de mi vida, que Dios te bendiga siempre, amor de mi vida juntos, y a nuestra increíble y extraordinaria relación! Te amo inmensamente desde lo más profundo de mi corazón, el amor de mi vida, que late aquí solo y solo para ti, dándote todo mi preciado amor, mientras como una caja fuerte protejo tu preciosa alma de todo daño. Te amo infinitamente desde lo más profundo de mi mente, donde cada día eres el pensamiento que acompaña mis preciosos días desde la mañana hasta la noche, y que quiero vivir cada día al máximo, sin volver a abrir los ojos. Te amo infinitamente, tú que cada día eres la estrella que brilla en mi cielo, mi dulce, hermoso y sabio ángel del cielo, el precioso pingüino, mi extraordinaria y única mogliettina , mi compañera de vida, mi precioso corazón que me mantiene viva, capaz de darme la fuerza para afrontar y superar cada reto, cada célula que compone mi cuerpo y mi alma, ¡mi todo! Que este 23 sea un día inolvidable, amor de mi vida, y que nos abra las puertas a una Navidad inolvidable que viviremos al máximo. Gracias por estar aquí a mi lado, amor de mi vida, y por cómo cada día me das la felicidad de estar aquí a tu lado, y por cada gesto que has hecho y harás por mí. Andrea + Giorgio= Hoy , por siempre y mas alla!!</p>
+            <span class="modal-hearts">💖</span>
+            <span class="modal-hearts">💖</span>
+            
+            
+            <p class="modal-text">
+              
+            </p>
+            <button class="modal-close" onclick="closeModal()">Chiudi 💝</button>
+        </div>
+    </div>
+    
+    <script>
+        // Crea cuori fluttuanti
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.innerHTML = '❤';
+            heart.style.left = Math.random() * 100 + '%';
+            heart.style.fontSize = (Math.random() * 15 + 15) + 'px';
+            heart.style.animationDuration = (Math.random() * 3 + 6) + 's';
+            heart.style.animationDelay = Math.random() * 2 + 's';
+            document.body.appendChild(heart);
+            
+            setTimeout(() => {
+                heart.remove();
+            }, 10000);
+        }
+        
+        // Crea stelle scintillanti
+        function createSparkle() {
+            const sparkle = document.createElement('div');
+            sparkle.className = 'sparkle';
+            sparkle.style.left = Math.random() * 100 + '%';
+            sparkle.style.top = Math.random() * 100 + '%';
+            sparkle.style.animationDelay = Math.random() * 1.5 + 's';
+            document.body.appendChild(sparkle);
+            
+            setTimeout(() => {
+                sparkle.remove();
+            }, 3000);
+        }
+        
+        // Crea effetto bokeh
+        function createBokeh() {
+            const bokeh = document.createElement('div');
+            bokeh.className = 'bokeh';
+            const size = Math.random() * 100 + 50;
+            bokeh.style.width = size + 'px';
+            bokeh.style.height = size + 'px';
+            bokeh.style.left = Math.random() * 100 + '%';
+            bokeh.style.animationDuration = (Math.random() * 10 + 15) + 's';
+            document.body.appendChild(bokeh);
+            
+            setTimeout(() => {
+                bokeh.remove();
+            }, 25000);
+        }
+        
+        // Crea particelle di luce
+        function createLightParticle() {
+            const particle = document.createElement('div');
+            particle.className = 'light-particle';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.top = Math.random() * 100 + '%';
+            particle.style.animationDelay = Math.random() * 3 + 's';
+            document.body.appendChild(particle);
+            
+            setTimeout(() => {
+                particle.remove();
+            }, 6000);
+        }
+        
+        // Genera cuori ogni 700ms
+        setInterval(createHeart, 700);
+        
+        // Genera stelle ogni 250ms
+        setInterval(createSparkle, 250);
+        
+        // Genera bokeh ogni 3s
+        setInterval(createBokeh, 3000);
+        
+        // Disabilita particelle di luce su mobile
+        const isMobile = /iPhone|iPad|Android|Mobile/.test(navigator.userAgent);
+        if (!isMobile) {
+            setInterval(createLightParticle, 500);
+        }
+        
+        // Crea elementi iniziali
+        for (let i = 0; i < 8; i++) {
+            setTimeout(createHeart, i * 150);
+        }
+        for (let i = 0; i < 20; i++) {
+            setTimeout(createSparkle, i * 80);
+        }
+        for (let i = 0; i < 5; i++) {
+            setTimeout(createBokeh, i * 600);
+        }
+        if (!isMobile) {
+            for (let i = 0; i < 30; i++) {
+                setTimeout(createLightParticle, i * 50);
+            }
+        }
+        
+        // Funzioni per la modal
+        function openModal() {
+            document.getElementById('modalOverlay').classList.add('active');
+        }
+        
+        function closeModal(event) {
+            if (!event || event.target.id === 'modalOverlay') {
+                document.getElementById('modalOverlay').classList.remove('active');
+            }
+        }
+        
+        // Chiudi modal con tasto ESC
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>
