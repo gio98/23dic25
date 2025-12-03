@@ -429,11 +429,39 @@
         }
         
         .modal-text {
-            font-family: Arial, sans-serif;
-            font-size: 1.2rem;
-            color: #8B4513;
-            line-height: 1.8;
+            font-family: 'Georgia', 'Garamond', serif;
+            font-size: 1rem;
+            color: #5D4037;
+            line-height: 2;
             margin-bottom: 30px;
+            text-align: justify;
+            letter-spacing: 0.5px;
+            word-spacing: 2px;
+            max-height: 60vh;
+            overflow-y: auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 15px;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        /* Scrollbar personalizzata per il testo */
+        .modal-text::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        .modal-text::-webkit-scrollbar-track {
+            background: rgba(255, 105, 180, 0.1);
+            border-radius: 10px;
+        }
+        
+        .modal-text::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.6), rgba(255, 105, 180, 0.6));
+            border-radius: 10px;
+        }
+        
+        .modal-text::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.9), rgba(255, 105, 180, 0.9));
         }
         
         .modal-close {
@@ -513,14 +541,10 @@
         <div class="modal-content" onclick="event.stopPropagation()">
             <span class="modal-hearts">💖</span>
             <span class="modal-hearts">💖</span>
-            <p>¡Felices 4 años y 2 meses juntos, amor de mi vida! Aquí estamos, 23 de diciembre, y con este increíble día nuestro, abrimos las puertas a esta mágica Navidad que juntos nos preparamos para vivir, como cada día extraordinario y único que paso aquí a tu lado. Quiero darte las gracias por existir aquí a mi lado, amor de mi vida, y por hacerme vivir cada día de una manera única e inolvidable aquí a tu lado. Este mes juntos también ha volado, y también fue hermoso vivir tu preciado cumpleaños juntos, amor de mi vida, donde nos divertimos y vivimos un momento inolvidable juntos. Hoy haremos lo mismo con nuestro hermoso y extraordinario 23, porque más que ningún otro, el 23 es el día que precede a la celebración que tanto amas, la preciosa Navidad. Quiero darte las gracias por hacerme redescubrir la magia de esta fiesta y cómo vivirla con alegría y pasión. Lo más especial es el hecho de que cada Navidad redescubro algo nuevo que me hace sentir como un niño de nuevo. Lo más preciado es que cada Navidad es un momento mágico que paso aquí a tu lado, ¡el amor de mi vida! Quiero darte las gracias por estar aquí a mi lado, amor de mi vida, y mi primer pensamiento este mes es como el momento difícil tras la muerte de mi abuelo. Con tu precioso e infinito amor, te quedaste a mi lado y borraste cada dolor en mí, cambiando mi perspectiva de la vida y llenando mi corazón de fuerza y coraje para afrontar este momento. Nunca dejaré de agradecerte por toda mi existencia, amor de mi vida, por este precioso gesto de amor y por cada uno de los demás que has tenido por mí hasta ahora, y por las cosas especiales que harás por mí cada día. Me encanta estar aquí cada momento, abrazada por tus preciosos brazos, porque eres mi preciado hogar. Con tus dulces besos, me relajas, y tu dulce voz acelera mi corazón. Como un niño, solo tú sabes cómo relajarme y hacerme cerrar los ojos, quedándome dormido juntos, mientras nuestras preciosas almas se fusionan, convirtiéndose en una, haciendo que nuestros corazones latan al unísono. Quiero agradecerte, amor de mi vida, por cómo me ayudaste en el proyecto que emprendimos juntos y casi terminamos con compromiso y perseverancia. Quiero decirte que eres el arquitecto de software número uno del universo. Con tu guía me sentí seguro, y con tu precisión, amor de mi vida, pudimos presentar un trabajo extraordinario. Hoy, 23 de febrero, quiero brindar juntos por el extraordinario trabajo que hemos realizado juntos. Como en cualquier otro proyecto, ¡juntos unimos fuerzas para superar cada desafío! Gracias por estar aquí en cada momento para animarme y quiero decirte que creo en ti todos los días, amor de mi vida, y estoy orgulloso de estar aquí a tu lado, amor de mi vida, y me encanta inspirarme en la extraordinaria fuerza que llevas en tu corazón y que cada día desatas con fuerza y perseverancia para superar cada desafío. Estaré aquí a tu lado todos los días, amor de mi vida, animándote y apoyándote. Recuerda nunca detenerte porque cada día eres el número uno en todo el universo, capaz de enfrentar y conquistar cada desafío que la vida te lanza. Incluso en esos momentos difíciles, amor de mi vida, nunca estarás solo porque estaré aquí a tu lado con todo mi amor para animarte y apoyarte hasta que llegues al final de cada desafío. ¡Felices 4 años y 2 meses juntos, amor de mi vida, que Dios te bendiga siempre, amor de mi vida juntos, y a nuestra increíble y extraordinaria relación! Te amo inmensamente desde lo más profundo de mi corazón, el amor de mi vida, que late aquí solo y solo para ti, dándote todo mi preciado amor, mientras como una caja fuerte protejo tu preciosa alma de todo daño. Te amo infinitamente desde lo más profundo de mi mente, donde cada día eres el pensamiento que acompaña mis preciosos días desde la mañana hasta la noche, y que quiero vivir cada día al máximo, sin volver a abrir los ojos. Te amo infinitamente, tú que cada día eres la estrella que brilla en mi cielo, mi dulce, hermoso y sabio ángel del cielo, el precioso pingüino, mi extraordinaria y única mogliettina , mi compañera de vida, mi precioso corazón que me mantiene viva, capaz de darme la fuerza para afrontar y superar cada reto, cada célula que compone mi cuerpo y mi alma, ¡mi todo! Que este 23 sea un día inolvidable, amor de mi vida, y que nos abra las puertas a una Navidad inolvidable que viviremos al máximo. Gracias por estar aquí a mi lado, amor de mi vida, y por cómo cada día me das la felicidad de estar aquí a tu lado, y por cada gesto que has hecho y harás por mí. Andrea + Giorgio= Hoy , por siempre y mas alla!!</p>
+            <p class="modal-text">¡Felices 4 años y 2 meses juntos, amor de mi vida! Aquí estamos, 23 de diciembre, y con este increíble día nuestro, abrimos las puertas a esta mágica Navidad que juntos nos preparamos para vivir, como cada día extraordinario y único que paso aquí a tu lado. Quiero darte las gracias por existir aquí a mi lado, amor de mi vida, y por hacerme vivir cada día de una manera única e inolvidable aquí a tu lado. Este mes juntos también ha volado, y también fue hermoso vivir tu preciado cumpleaños juntos, amor de mi vida, donde nos divertimos y vivimos un momento inolvidable juntos. Hoy haremos lo mismo con nuestro hermoso y extraordinario 23, porque más que ningún otro, el 23 es el día que precede a la celebración que tanto amas, la preciosa Navidad. Quiero darte las gracias por hacerme redescubrir la magia de esta fiesta y cómo vivirla con alegría y pasión. Lo más especial es el hecho de que cada Navidad redescubro algo nuevo que me hace sentir como un niño de nuevo. Lo más preciado es que cada Navidad es un momento mágico que paso aquí a tu lado, ¡el amor de mi vida! Quiero darte las gracias por estar aquí a mi lado, amor de mi vida, y mi primer pensamiento este mes es como el momento difícil tras la muerte de mi abuelo. Con tu precioso e infinito amor, te quedaste a mi lado y borraste cada dolor en mí, cambiando mi perspectiva de la vida y llenando mi corazón de fuerza y coraje para afrontar este momento. Nunca dejaré de agradecerte por toda mi existencia, amor de mi vida, por este precioso gesto de amor y por cada uno de los demás que has tenido por mí hasta ahora, y por las cosas especiales que harás por mí cada día. Me encanta estar aquí cada momento, abrazada por tus preciosos brazos, porque eres mi preciado hogar. Con tus dulces besos, me relajas, y tu dulce voz acelera mi corazón. Como un niño, solo tú sabes cómo relajarme y hacerme cerrar los ojos, quedándome dormido juntos, mientras nuestras preciosas almas se fusionan, convirtiéndose en una, haciendo que nuestros corazones latan al unísono. Quiero agradecerte, amor de mi vida, por cómo me ayudaste en el proyecto que emprendimos juntos y casi terminamos con compromiso y perseverancia. Quiero decirte que eres el arquitecto de software número uno del universo. Con tu guía me sentí seguro, y con tu precisión, amor de mi vida, pudimos presentar un trabajo extraordinario. Hoy, 23 de febrero, quiero brindar juntos por el extraordinario trabajo que hemos realizado juntos. Como en cualquier otro proyecto, ¡juntos unimos fuerzas para superar cada desafío! Gracias por estar aquí en cada momento para animarme y quiero decirte que creo en ti todos los días, amor de mi vida, y estoy orgulloso de estar aquí a tu lado, amor de mi vida, y me encanta inspirarme en la extraordinaria fuerza que llevas en tu corazón y que cada día desatas con fuerza y perseverancia para superar cada desafío. Estaré aquí a tu lado todos los días, amor de mi vida, animándote y apoyándote. Recuerda nunca detenerte porque cada día eres el número uno en todo el universo, capaz de enfrentar y conquistar cada desafío que la vida te lanza. Incluso en esos momentos difíciles, amor de mi vida, nunca estarás solo porque estaré aquí a tu lado con todo mi amor para animarte y apoyarte hasta que llegues al final de cada desafío. ¡Felices 4 años y 2 meses juntos, amor de mi vida, que Dios te bendiga siempre, amor de mi vida juntos, y a nuestra increíble y extraordinaria relación! Te amo inmensamente desde lo más profundo de mi corazón, el amor de mi vida, que late aquí solo y solo para ti, dándote todo mi preciado amor, mientras como una caja fuerte protejo tu preciosa alma de todo daño. Te amo infinitamente desde lo más profundo de mi mente, donde cada día eres el pensamiento que acompaña mis preciosos días desde la mañana hasta la noche, y que quiero vivir cada día al máximo, sin volver a abrir los ojos. Te amo infinitamente, tú que cada día eres la estrella que brilla en mi cielo, mi dulce, hermoso y sabio ángel del cielo, el precioso pingüino, mi extraordinaria y única mogliettina , mi compañera de vida, mi precioso corazón que me mantiene viva, capaz de darme la fuerza para afrontar y superar cada reto, cada célula que compone mi cuerpo y mi alma, ¡mi todo! Que este 23 sea un día inolvidable, amor de mi vida, y que nos abra las puertas a una Navidad inolvidable que viviremos al máximo. Gracias por estar aquí a mi lado, amor de mi vida, y por cómo cada día me das la felicidad de estar aquí a tu lado, y por cada gesto que has hecho y harás por mí. Andrea + Giorgio= Hoy , por siempre y mas alla!!</p>
             <span class="modal-hearts">💖</span>
             <span class="modal-hearts">💖</span>
             
-            
-            <p class="modal-text">
-              
-            </p>
             <button class="modal-close" onclick="closeModal()">Chiudi 💝</button>
         </div>
     </div>
