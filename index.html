@@ -4,6 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Feliz 4 anos y 2 meses juntos!!</title>
+  <script>
+  window.addEventListener('load', function() {
+    // Rileviamo se il browser sta simulando un desktop su un dispositivo mobile
+    if (document.documentElement.clientWidth > 900 && window.screen.width < 600) {
+      
+      const targetWidth = 450; // La larghezza mobile che vuoi simulare
+      const currentWidth = document.documentElement.clientWidth;
+      const scale = currentWidth / targetWidth;
+      const modalmsg = document.getElementById("loveLetterWrapper");
+      // Applichiamo la trasformazione
+      document.body.style.transformOrigin = "top left";
+      document.body.style.transform = "scale(" + scale + ")";
+      document.body.style.backgroundAttachment = "fixed";
+      document.body.style.backgroundSize = "150pc 100pc";
+      document.body.style.backgroundPositionX = "-80pc"; 
+      document.body.style.backgroundPositionY = "-5pc"; 
+      document.body.style.width = targetWidth + "px";
+
+      // CORREZIONE SPAZIO BIANCO: 
+      // Calcoliamo l'altezza effettiva dopo lo scale e forziamo il contenitore
+      const newHeight = document.body.getBoundingClientRect().height;
+      document.documentElement.style.height = newHeight + "px";
+      document.body.style.height = newHeight + "px";
+      modalmsg.style.top =  "-90pc";
+      modalmsg.style.height= newHeight + "px";
+
+      // Eliminiamo lo scroll orizzontale residuo
+      document.documentElement.style.overflowX = "hidden";
+    }
+  });
+</script>
+
+
     <style>
         @font-face {
             font-family: crfont;
@@ -587,6 +620,7 @@
             -webkit-overflow-scrolling: touch;
             overscroll-behavior: contain;
             touch-action: pan-y;
+            
         }
 
         .love-letter::before {
@@ -801,6 +835,49 @@
                 font-size: 2rem;
             }
         }
+        @media (orientation: portrait) and (max-aspect-ratio: 9/20) {
+            body {
+                background: url(sfondo1.png) no-repeat center center fixed;
+                background-size: cover;
+                background-position: -189pc;
+                overflow: hidden;
+            }
+            .img-topolino {
+                width: 52vmin;
+                left: 20vw;
+                top: 66vh;
+            }
+            h1.h1-top {
+                font-size: 13vmin;
+                top: 2vh;
+                left: 4vw;
+            }
+            h1.h1-center {
+                top: 38vh;
+                left: 8vw;
+                font-size: 27vmin;
+            }
+            h1.h1-bottom {
+                font-size: 10vmin;
+                top: 92vh;
+                left: 8vw;
+            }
+            .romantic-button {
+                top: 60vh;
+                left: 14vw;
+                font-size: clamp(1rem, 6.2vmin, 17pc);
+                padding: 23px 171px;
+                min-width: clamp(140px, 30vmin, 260px);
+            }
+            .sparkle {
+                width: 0.5vh;
+                height: 0.5vh;
+            }
+            .light-particle {
+                width: 0.35vh;
+                height: 0.35vh;
+            }
+        }
     </style>
 </head>
 <body>
@@ -855,7 +932,7 @@
             heart.className = 'heart';
             heart.innerHTML = '❤';
             heart.style.left = Math.random() * 100 + '%';
-            heart.style.fontSize = (Math.random() * 15 + 15) + 'px';
+            heart.style.fontSize = (Math.random() * 2.2 + 2.4) + 'vh';
             heart.style.animationDuration = (Math.random() * 3 + 6) + 's';
             heart.style.animationDelay = Math.random() * 2 + 's';
             document.body.appendChild(heart);
@@ -883,9 +960,9 @@
         function createBokeh() {
             const bokeh = document.createElement('div');
             bokeh.className = 'bokeh';
-            const size = Math.random() * 100 + 50;
-            bokeh.style.width = size + 'px';
-            bokeh.style.height = size + 'px';
+            const sizeVh = Math.random() * 6 + 4;
+            bokeh.style.width = sizeVh + 'vh';
+            bokeh.style.height = sizeVh + 'vh';
             bokeh.style.left = Math.random() * 100 + '%';
             bokeh.style.animationDuration = (Math.random() * 10 + 15) + 's';
             document.body.appendChild(bokeh);
@@ -972,6 +1049,38 @@
                 closeLoveLetter();
             }
         });
+        (function(){
+            var lockedWidth;
+            var isMobileDevice = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+            function lockResolution(){
+                var layoutWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+                if(!lockedWidth){
+                    lockedWidth = layoutWidth;
+                }
+                var currentWidth = (window.visualViewport && window.visualViewport.width) || layoutWidth;
+                var scale = currentWidth / lockedWidth;
+                if(scale < 1) scale = 1;
+                var viewport = document.querySelector('meta[name="viewport"]');
+                if(viewport){
+                    var content = 'width=' + lockedWidth + ', initial-scale=' + scale + ', minimum-scale=' + scale + ', maximum-scale=' + scale + ', user-scalable=no';
+                    if(viewport.getAttribute('content') !== content){
+                        viewport.setAttribute('content', content);
+                    }
+                }
+                if(isMobileDevice && scale > 1.05){
+                    document.documentElement.style.zoom = String(scale);
+                } else {
+                    document.documentElement.style.zoom = '';
+                }
+            }
+            lockResolution();
+            document.addEventListener('DOMContentLoaded', lockResolution);
+            window.addEventListener('resize', lockResolution);
+            window.addEventListener('orientationchange', function(){ setTimeout(lockResolution, 100); });
+            if(window.visualViewport && typeof window.visualViewport.addEventListener === 'function'){
+                window.visualViewport.addEventListener('resize', lockResolution);
+            }
+        })();
     </script>
 </body>
 </html>
